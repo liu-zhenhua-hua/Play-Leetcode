@@ -2,7 +2,7 @@
 * @Author: Tony Liu
 * @Date:   2020-02-24 20:13:59
 * @Modified by:   Tony Liu
-* @Last Modified time: 2020-02-24 20:42:03
+* @Last Modified time: 2020-02-24 20:45:46
 *
 * 1) digit = l1.val + l2.val + carry; 
 *    val   = digit%10;
@@ -12,7 +12,7 @@
 *    val   = digit%10;
 *    carry = digit/10;
 * 
-* 3) 
+* 3) carry != 0 new ListNode(carry)
 *
 *
 *
@@ -51,6 +51,20 @@ public class Solution{
 			current = current.next;
 			l1 = l1.next;
 		}
+
+		while(l2 != null){
+			int digit = l2.val + carry;
+			int val = digit%10;
+			carry = digit/10;
+
+			current.next = new ListNode(val);
+			current = current.next;
+
+			l2 = l2.next;
+		}
+
+		if(carry != 0) current.next = new ListNode(carry);
+		return fake.next;
 
 	}
 
