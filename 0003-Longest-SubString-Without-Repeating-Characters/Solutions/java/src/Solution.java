@@ -6,4 +6,9 @@ class Solution{
 		
 
 	}
+
+	public boolean allUnique(String s,int start,int end){
+
+		return true;
+	}
 }
