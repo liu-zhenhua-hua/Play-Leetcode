@@ -9,6 +9,13 @@ class Solution{
 
 	public boolean allUnique(String s,int start,int end){
 
+		Set<Character> set = new HashSet<>();
+		for(int i=start; i< end; i++){
+
+			Character ch = s.charAt(i);
+			if(set.contains(ch)) return false;
+		}
+
 		return true;
 	}
 }
